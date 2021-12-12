@@ -1,28 +1,70 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <v-app>
+        <router-view name="header"></router-view>
+
+        <v-main>
+            <router-view />
+        </v-main>
+
+        <router-view name="footer"></router-view>
+
+        <div v-if="overlay" class="b-overlay"></div>
+    </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+    name: "App",
+
+    data: () => ({
+        //
+    }),
+
+    computed: {
+        overlay() {
+            return this.$store.state.overlay;
+        },
+    },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.bb {
+    border: 1px solid black;
+}
+
+.bw {
+    border: 1px solid white;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.b-clickable {
+    cursor: pointer;
+}
+
+.b-pos-relative {
+    position: relative;
+}
+</style>
+
+<style scoped>
+.b-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(214, 227, 230, 0.2);
+    backdrop-filter: blur(5px);
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
 }
 </style>
