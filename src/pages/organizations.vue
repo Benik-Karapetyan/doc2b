@@ -1,5 +1,5 @@
 <template>
-    <v-sheet color="#e8e8e8" min-height="100%" class="pa-0 pt-8">
+    <v-sheet color="#e8e8e8" min-height="100%" class="pt-8">
         <v-row no-gutters justify="center">
             <v-col cols="10">
                 <v-sheet

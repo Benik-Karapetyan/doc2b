@@ -92,7 +92,7 @@ export default {
             { title: "Ջնջված", icon: mdiDeleteOutline, to: "" },
             { title: "Հաճախ տրվող հարցեր", icon: mdiHelpCircleOutline, to: "" },
             { title: "Հետադարձ կապ", icon: mdiCardAccountPhoneOutline, to: "" },
-            { title: "Կարգավորումներ", icon: mdiCogOutline, to: "" },
+            { title: "Կարգավորումներ", icon: mdiCogOutline, to: "/settings" },
         ],
     }),
 

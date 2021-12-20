@@ -118,6 +118,54 @@ const routes = [
             footer: AppFooter,
         },
     },
+    {
+        path: "/settings",
+        name: "Settings",
+        components: {
+            header: AppHeader,
+            default: () =>
+                import(
+                    /* webpackChunkName: "settings" */ "../pages/settings/settings"
+                ),
+            footer: AppFooter,
+        },
+    },
+    {
+        path: "/personal-settings",
+        name: "PersonalSettings",
+        components: {
+            header: AppHeader,
+            default: () =>
+                import(
+                    /* webpackChunkName: "personalSettings" */ "../pages/settings/personalSettings"
+                ),
+            footer: AppFooter,
+        },
+    },
+    {
+        path: "/finances",
+        name: "Finances",
+        components: {
+            header: AppHeader,
+            default: () =>
+                import(
+                    /* webpackChunkName: "finances" */ "../pages/settings/finances"
+                ),
+            footer: AppFooter,
+        },
+    },
+    {
+        path: "/organizations-settings",
+        name: "OrganizationsSettings",
+        components: {
+            header: AppHeader,
+            default: () =>
+                import(
+                    /* webpackChunkName: "organizationsSettings" */ "../pages/settings/organizationsSettings"
+                ),
+            footer: AppFooter,
+        },
+    },
 ];
 
 const router = new VueRouter({
