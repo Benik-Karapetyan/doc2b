@@ -9,12 +9,18 @@
         <router-view name="footer"></router-view>
 
         <div v-if="overlay" class="b-overlay"></div>
+
+        <CreateAction />
     </v-app>
 </template>
 
 <script>
+import CreateAction from "@/components/CreateAction";
+
 export default {
     name: "App",
+
+    components: { CreateAction },
 
     data: () => ({
         //
