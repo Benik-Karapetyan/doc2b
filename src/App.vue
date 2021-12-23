@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import CreateAction from "@/components/CreateAction";
+import CreateAction from "@/components/createAction/CreateAction";
 
 export default {
     name: "App",
