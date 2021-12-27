@@ -43,6 +43,10 @@
                 <v-window-item :value="4">
                     <IdDocuments />
                 </v-window-item>
+
+                <v-window-item :value="5">
+                    <GeneralInfo />
+                </v-window-item>
             </v-window>
 
             <v-card-actions class="pa-0 justify-space-between">
@@ -82,6 +86,7 @@ import JobAdmissionTypes from "./components/JobAdmissionTypes.vue";
 import ProbationPeriods from "./components/ProbationPeriods.vue";
 import JobApplication from "./components/JobApplication.vue";
 import IdDocuments from "./components/IdDocuments.vue";
+import GeneralInfo from "./components/GeneralInfo.vue";
 
 export default {
     name: "CreateAction",
@@ -91,11 +96,12 @@ export default {
         ProbationPeriods,
         JobApplication,
         IdDocuments,
+        GeneralInfo,
     },
 
     data: () => ({
         icons: { mdiClose, mdiArrowLeft, mdiArrowRight },
-        step: 3,
+        step: 4,
     }),
 
     computed: {
