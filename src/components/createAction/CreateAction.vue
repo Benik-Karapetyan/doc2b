@@ -5,9 +5,9 @@
         align="center"
         class="b-create-action-overlay"
     >
-        <v-card rounded="lg" width="419" class="pa-7">
+        <v-card rounded="lg" width="481" class="pa-7">
             <v-row no-gutters justify="end">
-                <v-btn icon>
+                <v-btn icon @click="setCreateAction(false)">
                     <v-icon v-text="icons.mdiClose"></v-icon>
                 </v-btn>
             </v-row>
@@ -47,23 +47,56 @@
                 <v-window-item :value="5">
                     <GeneralInfo />
                 </v-window-item>
+
+                <v-window-item :value="6">
+                    <Responsibilities />
+                </v-window-item>
+
+                <v-window-item :value="7">
+                    <DataVerification />
+                </v-window-item>
+
+                <v-window-item :value="8">
+                    <Summary />
+                </v-window-item>
             </v-window>
 
-            <v-card-actions class="pa-0 justify-space-between">
+            <v-card-actions class="pa-0 justify-end">
                 <v-btn
+                    v-if="step !== 8"
                     color="#FFC107"
-                    width="121"
-                    outlined
+                    class="mr-7 px-4"
+                    :style="{
+                        border:
+                            step === 1
+                                ? '2px solid rgba(0, 0, 0, 0.16)'
+                                : '2px solid #ffc107',
+                    }"
+                    text
                     :disabled="step === 1"
                     @click="step--"
                 >
-                    <v-icon size="20" v-text="icons.mdiArrowLeft"></v-icon>
+                    <v-icon
+                        size="20"
+                        class="mr-1"
+                        v-text="icons.mdiArrowLeft"
+                    ></v-icon>
                     նախորդ
                 </v-btn>
 
                 <v-btn
+                    v-if="step === 8"
                     color="#FFC107"
-                    width="121"
+                    class="px-4"
+                    dark
+                    depressed
+                    >ավարտել</v-btn
+                >
+
+                <v-btn
+                    v-else
+                    color="#FFC107"
+                    class="px-4"
                     dark
                     depressed
                     @click="step++"
@@ -71,7 +104,7 @@
                     հաջորդ
                     <v-icon
                         size="20"
-                        class="ml-1"
+                        class="ml-2"
                         v-text="icons.mdiArrowRight"
                     ></v-icon>
                 </v-btn>
@@ -82,11 +115,15 @@
 
 <script>
 import { mdiClose, mdiArrowLeft, mdiArrowRight } from "@mdi/js";
+import { mapMutations } from "vuex";
 import JobAdmissionTypes from "./components/JobAdmissionTypes.vue";
 import ProbationPeriods from "./components/ProbationPeriods.vue";
 import JobApplication from "./components/JobApplication.vue";
 import IdDocuments from "./components/IdDocuments.vue";
 import GeneralInfo from "./components/GeneralInfo.vue";
+import Responsibilities from "./components/Responsibilities.vue";
+import DataVerification from "./components/DataVerification.vue";
+import Summary from "./components/Summary.vue";
 
 export default {
     name: "CreateAction",
@@ -97,11 +134,14 @@ export default {
         JobApplication,
         IdDocuments,
         GeneralInfo,
+        Responsibilities,
+        DataVerification,
+        Summary,
     },
 
     data: () => ({
         icons: { mdiClose, mdiArrowLeft, mdiArrowRight },
-        step: 4,
+        step: 1,
     }),
 
     computed: {
@@ -127,6 +167,10 @@ export default {
                     return "";
             }
         },
+    },
+
+    methods: {
+        ...mapMutations(["setCreateAction"]),
     },
 };
 </script>

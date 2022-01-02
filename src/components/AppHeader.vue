@@ -21,7 +21,7 @@
 
                     <v-spacer></v-spacer>
 
-                    <v-sheet width="300" class="rounded-xl" light>
+                    <v-sheet width="345" class="rounded-xl" light>
                         <v-text-field
                             color="#FFC107"
                             placeholder="Որոնել"

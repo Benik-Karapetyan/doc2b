@@ -13,7 +13,12 @@
                         align="center"
                         class="mb-6"
                     >
-                        <div class="b-title">փաստաթղթեր</div>
+                        <div class="b-title" v-text="pageTitle"></div>
+
+                        <v-switch
+                            v-model="switchRole"
+                            :label="'Role - ' + role"
+                        ></v-switch>
 
                         <v-btn
                             color="#FFC107"
@@ -40,7 +45,7 @@
                         <v-col
                             v-for="(document, i) in documents"
                             :key="i"
-                            cols="4"
+                            :cols="role === 'junior' ? 5 : 4"
                             class="pa-2"
                         >
                             <v-card elevation="1" rounded="lg" class="pa-4">
@@ -77,9 +82,17 @@
                                             v-text="document.author"
                                         ></span>
 
+                                        <span
+                                            v-if="role === 'junior'"
+                                            class="font-italic ml-2"
+                                            style="font-size: 14px"
+                                            v-text="document.companyName"
+                                        ></span>
+
                                         <v-icon
                                             color="rgba(31, 31, 31, 0.7)"
                                             class="mx-1"
+                                            style="margin-bottom: 2px"
                                             size="5"
                                             v-text="
                                                 icons.mdiCheckboxBlankCircle
@@ -125,6 +138,7 @@ import {
     mdiDotsVertical,
     mdiCheckboxBlankCircle,
 } from "@mdi/js";
+import { mapMutations } from "vuex";
 
 export default {
     data: () => ({
@@ -139,96 +153,138 @@ export default {
             {
                 title: "աշխատանքի_ընդ.27_09_2021",
                 author: "Ա. Հովհաննիսյան",
+                companyName: "Rem Argo LLC",
                 date: "29 sep 2021",
             },
             {
                 title: "աշխատանքի_ընդ.27_09_2021",
                 author: "Ա. Հովհաննիսյան",
+                companyName: "Rem Argo LLC",
                 date: "29 sep 2021",
             },
             {
                 title: "աշխատանքի_ընդ.27_09_2021",
                 author: "Ա. Հովհաննիսյան",
+                companyName: "Rem Argo LLC",
                 date: "29 sep 2021",
             },
             {
                 title: "աշխատանքի_ընդ.27_09_2021",
                 author: "Ա. Հովհաննիսյան",
+                companyName: "Rem Argo LLC",
                 date: "29 sep 2021",
             },
             {
                 title: "աշխատանքի_ընդ.27_09_2021",
                 author: "Ա. Հովհաննիսյան",
+                companyName: "Rem Argo LLC",
                 date: "29 sep 2021",
             },
             {
                 title: "աշխատանքի_ընդ.27_09_2021",
                 author: "Ա. Հովհաննիսյան",
+                companyName: "Rem Argo LLC",
                 date: "29 sep 2021",
             },
             {
                 title: "աշխատանքի_ընդ.27_09_2021",
                 author: "Ա. Հովհաննիսյան",
+                companyName: "Rem Argo LLC",
                 date: "29 sep 2021",
             },
             {
                 title: "աշխատանքի_ընդ.27_09_2021",
                 author: "Ա. Հովհաննիսյան",
+                companyName: "Rem Argo LLC",
                 date: "29 sep 2021",
             },
             {
                 title: "աշխատանքի_ընդ.27_09_2021",
                 author: "Ա. Հովհաննիսյան",
+                companyName: "Rem Argo LLC",
                 date: "29 sep 2021",
             },
             {
                 title: "աշխատանքի_ընդ.27_09_2021",
                 author: "Ա. Հովհաննիսյան",
+                companyName: "Rem Argo LLC",
                 date: "29 sep 2021",
             },
             {
                 title: "աշխատանքի_ընդ.27_09_2021",
                 author: "Ա. Հովհաննիսյան",
+                companyName: "Rem Argo LLC",
                 date: "29 sep 2021",
             },
             {
                 title: "աշխատանքի_ընդ.27_09_2021",
                 author: "Ա. Հովհաննիսյան",
+                companyName: "Rem Argo LLC",
                 date: "29 sep 2021",
             },
             {
                 title: "աշխատանքի_ընդ.27_09_2021",
                 author: "Ա. Հովհաննիսյան",
+                companyName: "Rem Argo LLC",
                 date: "29 sep 2021",
             },
             {
                 title: "աշխատանքի_ընդ.27_09_2021",
                 author: "Ա. Հովհաննիսյան",
+                companyName: "Rem Argo LLC",
                 date: "29 sep 2021",
             },
             {
                 title: "աշխատանքի_ընդ.27_09_2021",
                 author: "Ա. Հովհաննիսյան",
+                companyName: "Rem Argo LLC",
                 date: "29 sep 2021",
             },
             {
                 title: "աշխատանքի_ընդ.27_09_2021",
                 author: "Ա. Հովհաննիսյան",
+                companyName: "Rem Argo LLC",
                 date: "29 sep 2021",
             },
             {
                 title: "աշխատանքի_ընդ.27_09_2021",
                 author: "Ա. Հովհաննիսյան",
+                companyName: "Rem Argo LLC",
                 date: "29 sep 2021",
             },
             {
                 title: "աշխատանքի_ընդ.27_09_2021",
                 author: "Ա. Հովհաննիսյան",
+                companyName: "Rem Argo LLC",
                 date: "29 sep 2021",
             },
         ],
         page: 1,
+        switchRole: false,
     }),
+
+    computed: {
+        role() {
+            return this.$store.state.user.role;
+        },
+
+        pageTitle() {
+            return this.role === "junior"
+                ? "Ստացված փաստաթղթեր "
+                : "փաստաթղթեր";
+        },
+    },
+
+    methods: {
+        ...mapMutations(["setRole"]),
+    },
+
+    watch: {
+        switchRole(val) {
+            if (val) this.setRole("junior");
+            else this.setRole("senior");
+        },
+    },
 };
 </script>
 

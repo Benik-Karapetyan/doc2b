@@ -43,18 +43,6 @@ const routes = [
         ],
     },
     {
-        path: "/no-workspace",
-        name: "NoWorkspace",
-        components: {
-            header: AppHeader,
-            default: () =>
-                import(
-                    /* webpackChunkName: "noWorkspace" */ "../pages/noWorkspace"
-                ),
-            footer: AppFooter,
-        },
-    },
-    {
         path: "/documents",
         name: "Documents",
         components: {
@@ -163,6 +151,54 @@ const routes = [
                 import(
                     /* webpackChunkName: "organizationsSettings" */ "../pages/settings/organizationsSettings"
                 ),
+            footer: AppFooter,
+        },
+    },
+
+    {
+        path: "/no-workspace",
+        name: "NoWorkspace",
+        components: {
+            header: AppHeader,
+            default: () =>
+                import(
+                    /* webpackChunkName: "noWorkspace" */ "../pages/noWorkspace"
+                ),
+            footer: AppFooter,
+        },
+    },
+
+    {
+        path: "/junior-applications",
+        name: "JuniorApplications",
+        components: {
+            header: AppHeader,
+            default: () =>
+                import(
+                    /* webpackChunkName: "juniorApplications" */ "../pages/juniorDesk/myApplications"
+                ),
+            footer: AppFooter,
+        },
+    },
+    {
+        path: "/admin-request-desk",
+        name: "AdminRequestDesk",
+        components: {
+            header: AppHeader,
+            default: () =>
+                import(
+                    /* webpackChunkName: "adminRequestDesk" */ "../pages/juniorDesk/adminRequestDesk"
+                ),
+            footer: AppFooter,
+        },
+    },
+    {
+        path: "/users",
+        name: "Users",
+        components: {
+            header: AppHeader,
+            default: () =>
+                import(/* webpackChunkName: "users" */ "../pages/users"),
             footer: AppFooter,
         },
     },

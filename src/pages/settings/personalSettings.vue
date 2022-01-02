@@ -73,6 +73,7 @@
                                             <v-card elevation="1" class="mr-5">
                                                 <v-icon
                                                     color="#4CAF50"
+                                                    size="27"
                                                     v-text="icons.mdiCheck"
                                                 ></v-icon>
                                             </v-card>
@@ -80,6 +81,7 @@
                                             <v-card elevation="1">
                                                 <v-icon
                                                     color="#F44336"
+                                                    size="27"
                                                     v-text="icons.mdiClose"
                                                 ></v-icon>
                                             </v-card>
@@ -128,6 +130,7 @@
                                             <v-card elevation="1" class="mr-5">
                                                 <v-icon
                                                     color="#4CAF50"
+                                                    size="27"
                                                     v-text="icons.mdiCheck"
                                                 ></v-icon>
                                             </v-card>
@@ -135,6 +138,7 @@
                                             <v-card elevation="1">
                                                 <v-icon
                                                     color="#F44336"
+                                                    size="27"
                                                     v-text="icons.mdiClose"
                                                 ></v-icon>
                                             </v-card>

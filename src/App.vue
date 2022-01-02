@@ -10,7 +10,7 @@
 
         <div v-if="overlay" class="b-overlay"></div>
 
-        <CreateAction />
+        <CreateAction v-if="createAction" />
     </v-app>
 </template>
 
@@ -29,6 +29,10 @@ export default {
     computed: {
         overlay() {
             return this.$store.state.overlay;
+        },
+
+        createAction() {
+            return this.$store.state.createAction;
         },
     },
 };
@@ -55,6 +59,13 @@ input[type="number"] {
 
 .b-clickable {
     cursor: pointer;
+}
+
+.b-text-unselectable {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none;
 }
 
 .b-pos-relative {

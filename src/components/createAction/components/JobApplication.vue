@@ -16,7 +16,7 @@
                 />
 
                 <div
-                    style="max-width: 190px; font-size: 15px"
+                    style="max-width: 250px; font-size: 15px"
                     v-text="appType.title"
                 ></div>
 
@@ -75,14 +75,6 @@ export default {
     overflow: auto;
 }
 
-.b-shadowed {
-    box-shadow: -1px -1px 10px #ffffff, 1px 1px 10px #d9d9d9;
-}
-
-.b-outlined {
-    border: 1px solid rgba(0, 0, 0, 0.23);
-}
-
 .b-container::-webkit-scrollbar {
     width: 5px;
     height: 5px;
@@ -96,5 +88,13 @@ export default {
 .b-container::-webkit-scrollbar-thumb {
     background: #c4c4c4;
     border-radius: 8px;
+}
+
+.b-shadowed {
+    box-shadow: -1px -1px 10px #ffffff, 1px 1px 10px #d9d9d9;
+}
+
+.b-outlined {
+    border: 1px solid rgba(0, 0, 0, 0.23);
 }
 </style>

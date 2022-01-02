@@ -86,7 +86,7 @@ export default {
             {
                 title: "Վերջին դիտված ֆայլեր",
                 icon: mdiClockOutline,
-                to: "/recent",
+                to: "/users",
             },
             { title: "Ստացված ֆայլեր", icon: mdiFolderAccountOutline, to: "" },
             { title: "Ջնջված", icon: mdiDeleteOutline, to: "" },

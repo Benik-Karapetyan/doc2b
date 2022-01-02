@@ -29,6 +29,24 @@
             hide-details="auto"
         ></v-text-field>
 
+        <v-row no-gutters justify="end" class="mt-2 mb-5">
+            <v-card elevation="1" class="mr-5">
+                <v-icon
+                    color="#4CAF50"
+                    size="27"
+                    v-text="icons.mdiCheck"
+                ></v-icon>
+            </v-card>
+
+            <v-card elevation="1">
+                <v-icon
+                    color="#F44336"
+                    size="27"
+                    v-text="icons.mdiClose"
+                ></v-icon>
+            </v-card>
+        </v-row>
+
         <v-text-field
             label="Հայրանուն"
             class="mb-3"
@@ -55,10 +73,13 @@
 </template>
 
 <script>
+import { mdiCheck, mdiClose } from "@mdi/js";
+
 export default {
-    name: "GeneralInfo",
+    name: "DataVerification",
 
     data: () => ({
+        icons: { mdiCheck, mdiClose },
         progress: 60,
     }),
 };

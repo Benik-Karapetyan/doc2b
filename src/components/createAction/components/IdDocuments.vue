@@ -20,8 +20,9 @@
         <v-row
             no-gutters
             justify="center"
-            style="background-color: rgba(0, 0, 0, 0.03)"
-            class="b-dashed rounded-lg py-11 text--secondary"
+            align="center"
+            style="background-color: rgba(0, 0, 0, 0.03); font-size: 15px"
+            class="b-dashed rounded-lg py-11 text--secondary b-text-unselectable b-clickable"
         >
             <v-icon
                 color="#FFC107"

@@ -31,6 +31,7 @@
                     fab
                     dark
                     depressed
+                    @click="setCreateAction(true)"
                 >
                     <v-icon large v-text="icons.mdiPlus"></v-icon>
                 </v-btn>
@@ -61,6 +62,7 @@ import {
     mdiBriefcaseVariantOutline,
     mdiPlus,
 } from "@mdi/js";
+import { mapMutations } from "vuex";
 import FooterLink from "./common/FooterLink";
 import UserDesk from "./common/UserDesk";
 
@@ -80,6 +82,10 @@ export default {
             mdiPlus,
         },
     }),
+
+    methods: {
+        ...mapMutations(["setCreateAction"]),
+    },
 };
 </script>
 
