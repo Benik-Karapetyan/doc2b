@@ -1,5 +1,5 @@
 <template>
-    <v-card elevation="1" rounded="lg" width="355" class="pa-5">
+    <v-card rounded="lg" width="355" class="pa-5">
         <v-row no-gutters justify="space-between" align="center">
             <v-col style="height: 96px">
                 <v-card-title
@@ -39,3 +39,8 @@ export default {
     },
 };
 </script>
+
+<style lang="sass" scoped>
+.v-sheet.v-card
+   box-shadow: 1px 1px 50px rgba(0, 0, 0, 0.05)
+</style>

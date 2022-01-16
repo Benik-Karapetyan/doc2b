@@ -66,27 +66,6 @@ export default {
 </script>
 
 <style scoped>
-.b-container {
-    padding: 0 4px;
-    max-height: calc(100vh - 413.59px);
-    overflow: auto;
-}
-
-.b-container::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
-    border-radius: 8px;
-}
-
-.b-container::-webkit-scrollbar-track {
-    border-radius: 8px;
-}
-
-.b-container::-webkit-scrollbar-thumb {
-    background: #c4c4c4;
-    border-radius: 8px;
-}
-
 .b-shadowed {
     box-shadow: -1px -1px 10px #ffffff, 1px 1px 10px #d9d9d9;
 }

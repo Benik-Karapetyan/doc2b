@@ -7,29 +7,23 @@
             style="padding: 5px 0"
         >
             <v-col>
-                <v-alert
-                    :color="
-                        selectedJobType === i
-                            ? '#FFC107'
-                            : 'rgba(0, 0, 0, 0.23)'
-                    "
-                    role="listitem"
-                    class="mb-0 py-0 px-3 rounded-pill b-clickable"
-                    style="font-size: 15px"
-                    text
-                    outlined
-                    dense
-                    @click="selectedJobType = i"
-                >
-                    <span
-                        :class="
-                            selectedJobType === i
-                                ? 'text--primary'
-                                : 'text--secondary'
-                        "
-                        v-text="jobType.title"
-                    ></span>
-                </v-alert>
+                <v-hover v-slot="{ hover }">
+                    <v-alert
+                        :color="hover ? '#FFC107' : 'rgba(0, 0, 0, 0.23)'"
+                        role="listitem"
+                        class="mb-0 py-0 px-3 rounded-pill b-clickable"
+                        style="font-size: 15px"
+                        text
+                        outlined
+                        dense
+                        @click="$emit('click', jobType)"
+                    >
+                        <span
+                            :class="hover ? 'text--primary' : 'text--secondary'"
+                            v-text="jobType.title"
+                        ></span>
+                    </v-alert>
+                </v-hover>
             </v-col>
 
             <v-icon
@@ -56,7 +50,6 @@ export default {
             { title: "Կամավոր աշխատանքների մատուցման" },
             { title: "Նախագծային" },
         ],
-        selectedJobType: null,
     }),
 };
 </script>

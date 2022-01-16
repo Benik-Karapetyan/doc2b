@@ -175,6 +175,11 @@ export default {
 };
 </script>
 
+<style lang="sass" scoped>
+.v-menu__content
+    box-shadow: -1px -1px 10px #FFFFFF, 1px 1px 10px #D9D9D9
+</style>
+
 <style scoped>
 .b-content::-webkit-scrollbar {
     width: 5px;

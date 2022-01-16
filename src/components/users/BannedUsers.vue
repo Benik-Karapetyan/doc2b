@@ -114,7 +114,7 @@ import {
 } from "@mdi/js";
 
 export default {
-    name: "AllUsers",
+    name: "BannedUsers",
 
     data: () => ({
         icons: {
@@ -135,7 +135,7 @@ export default {
                 user: "Աննա Հովհաննիսյան",
                 email: "example@email.com",
                 role: "Ադմինիստրատոր",
-                status: "active",
+                status: "banned",
                 statusText: "Վերջին մուտք՝",
                 date: "25 Նոյեմբեր 2021",
             },
@@ -151,7 +151,7 @@ export default {
                 user: "Աննա Հովհաննիսյան",
                 email: "example@email.com",
                 role: "Ադմինիստրատոր",
-                status: "invited",
+                status: "banned",
                 statusText: "Հրավերի ամսաթիվ՝",
                 date: "25 Նոյեմբեր 2021",
             },
@@ -159,7 +159,7 @@ export default {
                 user: "Աննա Հովհաննիսյան",
                 email: "example@email.com",
                 role: "Ադմինիստրատոր",
-                status: "deleted",
+                status: "banned",
                 statusText: "Ջնջման ամսաթիվ՝",
                 date: "25 Նոյեմբեր 2021",
             },

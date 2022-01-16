@@ -2,7 +2,7 @@
     <v-app>
         <router-view name="header"></router-view>
 
-        <v-main>
+        <v-main :class="{ 'b-content-fixed': createAction }">
             <router-view />
         </v-main>
 
@@ -74,6 +74,11 @@ input[type="number"] {
 </style>
 
 <style scoped>
+.b-content-fixed {
+    max-height: 100vh;
+    overflow: hidden;
+}
+
 .b-overlay {
     position: fixed;
     top: 0;

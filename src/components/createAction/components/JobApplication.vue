@@ -4,7 +4,7 @@
             v-for="(appType, i) in jobApplicationTypes"
             :key="i"
             :class="appType.isActive ? 'b-shadowed' : 'b-outlined'"
-            class="my-1 pa-4 rounded-lg"
+            class="my-3 pa-4 rounded-lg"
             :style="{ opacity: appType.isActive ? 1 : 0.6 }"
         >
             <v-row no-gutters align="center">
@@ -69,27 +69,6 @@ export default {
 </script>
 
 <style scoped>
-.b-container {
-    padding: 0 4px;
-    max-height: calc(100vh - 413.59px);
-    overflow: auto;
-}
-
-.b-container::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
-    border-radius: 8px;
-}
-
-.b-container::-webkit-scrollbar-track {
-    border-radius: 8px;
-}
-
-.b-container::-webkit-scrollbar-thumb {
-    background: #c4c4c4;
-    border-radius: 8px;
-}
-
 .b-shadowed {
     box-shadow: -1px -1px 10px #ffffff, 1px 1px 10px #d9d9d9;
 }

@@ -5,7 +5,12 @@
         align="center"
         class="b-create-action-overlay"
     >
-        <v-card rounded="lg" width="481" class="pa-7">
+        <v-sheet
+            rounded="lg"
+            width="481"
+            class="pa-7 mb-4"
+            style="box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.2)"
+        >
             <v-row no-gutters justify="end">
                 <v-btn icon @click="setCreateAction(false)">
                     <v-icon v-text="icons.mdiClose"></v-icon>
@@ -29,11 +34,11 @@
 
             <v-window v-model="step" class="mb-7">
                 <v-window-item :value="1">
-                    <JobAdmissionTypes />
+                    <JobAdmissionTypes @click="step++" />
                 </v-window-item>
 
                 <v-window-item :value="2">
-                    <ProbationPeriods />
+                    <ProbationPeriods @click="step++" />
                 </v-window-item>
 
                 <v-window-item :value="3">
@@ -49,7 +54,7 @@
                 </v-window-item>
 
                 <v-window-item :value="6">
-                    <Responsibilities />
+                    <Responsibilities @click="step++" />
                 </v-window-item>
 
                 <v-window-item :value="7">
@@ -61,9 +66,9 @@
                 </v-window-item>
             </v-window>
 
-            <v-card-actions class="pa-0 justify-end">
+            <v-card-actions class="pa-0">
                 <v-btn
-                    v-if="step !== 8"
+                    v-if="step > 1 && step < 8"
                     color="#FFC107"
                     class="mr-7 px-4"
                     :style="{
@@ -84,17 +89,10 @@
                     նախորդ
                 </v-btn>
 
-                <v-btn
-                    v-if="step === 8"
-                    color="#FFC107"
-                    class="px-4"
-                    dark
-                    depressed
-                    >ավարտել</v-btn
-                >
+                <v-spacer></v-spacer>
 
                 <v-btn
-                    v-else
+                    v-if="step > 2 && step < 8"
                     color="#FFC107"
                     class="px-4"
                     dark
@@ -108,8 +106,17 @@
                         v-text="icons.mdiArrowRight"
                     ></v-icon>
                 </v-btn>
+
+                <v-btn
+                    v-if="step === 8"
+                    color="#FFC107"
+                    class="px-4"
+                    dark
+                    depressed
+                    >ավարտել</v-btn
+                >
             </v-card-actions>
-        </v-card>
+        </v-sheet>
     </v-row>
 </template>
 
@@ -189,5 +196,28 @@ export default {
 
 .b-outlined {
     border: 1px solid rgba(0, 0, 0, 0.12);
+}
+</style>
+
+<style>
+.b-container {
+    max-height: calc(100vh - 413.59px);
+    overflow: auto;
+    padding: 0 10px 0 5px;
+}
+
+.b-container::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    border-radius: 8px;
+}
+
+.b-container::-webkit-scrollbar-track {
+    border-radius: 8px;
+}
+
+.b-container::-webkit-scrollbar-thumb {
+    background: #c4c4c4;
+    border-radius: 8px;
 }
 </style>

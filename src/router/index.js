@@ -107,6 +107,51 @@ const routes = [
         },
     },
     {
+        path: "/received-documents",
+        name: "ReceivedDocuments",
+        components: {
+            header: AppHeader,
+            default: () =>
+                import(
+                    /* webpackChunkName: "receivedDocuments" */ "../pages/receivedDocuments"
+                ),
+            footer: AppFooter,
+        },
+    },
+    {
+        path: "/deleted-documents",
+        name: "DeletedDocuments",
+        components: {
+            header: AppHeader,
+            default: () =>
+                import(
+                    /* webpackChunkName: "deletedDocuments" */ "../pages/deletedDocuments"
+                ),
+            footer: AppFooter,
+        },
+    },
+    {
+        path: "/faq",
+        name: "FAQ",
+        components: {
+            header: AppHeader,
+            default: () => import(/* webpackChunkName: "faq" */ "../pages/FAQ"),
+            footer: AppFooter,
+        },
+    },
+    {
+        path: "/contact-us",
+        name: "ContactUs",
+        components: {
+            header: AppHeader,
+            default: () =>
+                import(
+                    /* webpackChunkName: "contactUs" */ "../pages/contactUs"
+                ),
+            footer: AppFooter,
+        },
+    },
+    {
         path: "/settings",
         name: "Settings",
         components: {
@@ -126,6 +171,18 @@ const routes = [
             default: () =>
                 import(
                     /* webpackChunkName: "personalSettings" */ "../pages/settings/personalSettings"
+                ),
+            footer: AppFooter,
+        },
+    },
+    {
+        path: "/general-settings",
+        name: "GeneralSettings",
+        components: {
+            header: AppHeader,
+            default: () =>
+                import(
+                    /* webpackChunkName: "generalSettings" */ "../pages/settings/generalSettings"
                 ),
             footer: AppFooter,
         },
@@ -199,6 +256,18 @@ const routes = [
             header: AppHeader,
             default: () =>
                 import(/* webpackChunkName: "users" */ "../pages/users"),
+            footer: AppFooter,
+        },
+    },
+    {
+        path: "/custom-actions",
+        name: "CustomActions",
+        components: {
+            header: AppHeader,
+            default: () =>
+                import(
+                    /* webpackChunkName: "customActions" */ "../pages/customActions"
+                ),
             footer: AppFooter,
         },
     },

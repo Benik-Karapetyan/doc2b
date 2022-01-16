@@ -53,6 +53,7 @@ export default {
                 text: "Կառավարեք հավելվածի լեզուն, անջատեք կամ ջնջեք ձեր հաշիվը:",
                 image: digitalPlatformImg,
                 buttonText: "Անցնել ընհանուր կարգավորումների էջ",
+                to: "/general-settings",
             },
             {
                 title: "Ֆինանսներ",

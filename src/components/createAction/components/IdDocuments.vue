@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="b-container pl-0">
         <IdDocumentItem v-for="(doc, i) in idDocuments" :key="i" :item="doc" />
 
         <v-row

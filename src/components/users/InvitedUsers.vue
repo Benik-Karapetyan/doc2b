@@ -46,7 +46,7 @@
             <v-chip
                 :color="calculateStatusColor(item.status)"
                 class="font-italic mr-2"
-                style="min-width: 110px"
+                style="min-width: 99px"
                 small
                 dark
             >
@@ -114,7 +114,7 @@ import {
 } from "@mdi/js";
 
 export default {
-    name: "AllUsers",
+    name: "InvitedUsers",
 
     data: () => ({
         icons: {
@@ -135,7 +135,7 @@ export default {
                 user: "Աննա Հովհաննիսյան",
                 email: "example@email.com",
                 role: "Ադմինիստրատոր",
-                status: "active",
+                status: "invited",
                 statusText: "Վերջին մուտք՝",
                 date: "25 Նոյեմբեր 2021",
             },
@@ -143,7 +143,7 @@ export default {
                 user: "Աննա Հովհաննիսյան",
                 email: "example@email.com",
                 role: "Ադմինիստրատոր",
-                status: "banned",
+                status: "invited",
                 statusText: "Կասեցման ամսաթիվ՝",
                 date: "25 Նոյեմբեր 2021",
             },
@@ -159,7 +159,7 @@ export default {
                 user: "Աննա Հովհաննիսյան",
                 email: "example@email.com",
                 role: "Ադմինիստրատոր",
-                status: "deleted",
+                status: "invited",
                 statusText: "Ջնջման ամսաթիվ՝",
                 date: "25 Նոյեմբեր 2021",
             },
